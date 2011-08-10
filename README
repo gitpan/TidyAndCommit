@@ -78,3 +78,5 @@ COPYRIGHT AND LICENSE
 Dependencies
     File::Spec
 
+    Perl::Tidy
+

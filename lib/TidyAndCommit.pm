@@ -3,7 +3,7 @@ BEGIN {
   $TidyAndCommit::AUTHORITY = 'cpan:SHANTANU';
 }
 BEGIN {
-  $TidyAndCommit::VERSION = '0.01';
+  $TidyAndCommit::VERSION = '0.02';
 }
 
 use 5.006;
@@ -185,5 +185,7 @@ See http://dev.perl.org/licenses/ for more information.
 =head1 Dependencies 
 
 File::Spec
+
+Perl::Tidy
 
 =cut

@@ -30,7 +30,7 @@ when passed a foldername pass your own tidyrc config file to the object to get c
     'File::Spec' => '0',
     'Perl::Tidy' => '0'
   },
-  'VERSION' => '0.01',
+  'VERSION' => '0.02',
   'test' => {
     'TESTS' => 't/*.t'
   }
