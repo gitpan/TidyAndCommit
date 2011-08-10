@@ -1,0 +1,80 @@
+NAME
+    TidyAnyCommit - This class can be used as a wrapper around a commit
+    (check example for how to wrap this around a subversion commit message).
+    The module cleans up the target code using perltidy before running the
+    next step(usually a svn commit statement for my own use case). Perltidy
+    must be installed before use of this script. This Class will Tidy all
+    files with .pm, .cgi or .pl extension when passed a file name and it
+    will search for all file in a folder with .pm, .cgi or .pl extension
+    when passed a foldername pass your own tidyrc config file to the object
+    to get custom tidy goodness.
+
+SYNOPSIS
+      use strict;
+      use warnings;
+      use TidyAndCommit;
+
+      my $tncobj = TidyAndCommit->new(
+                               perltidyrc => './xt/.perltidyrc',
+                               runbefore  => 'svn commit' # The command to call on the list post commit
+                                 );
+      my @list; # List of files and folders to be tidied and committed
+      push @list,'./'; 
+      $tncobj->tnc(\@list); # \@list is a list of absolute or relative paths to files and folders.
+                            #
+                            # If you want to pass a list of files or folders to the script to tidy and
+                            # then commit, you might simply use the @ARGV array instead of @list here. 
+                            # Once you do that this script will essentially work as a wrapper around 
+                            # the command "svn commit" passed as "runbefore" param above you can further 
+                            # modify this script to support -m flags for commit messages etc. 
+                            # if your SVN_EDITOR is not set.
+
+AUTHOR
+    Shantanu Bhadoria, "<shantanu (dot comes here) bhadoria at gmail dot
+    com>" <http://www.shantanubhadoria.com>.
+
+BUGS
+    Please report any bugs or feature requests to "bug-tidyandcommit at
+    rt.cpan.org", or through the web interface at
+    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=TidyAndCommit>. I will
+    be notified, and then you'll automatically be notified of progress on
+    your bug as I make changes.
+
+SUPPORT
+    You can find documentation for this module with the perldoc command.
+
+        perldoc TidyAndCommit
+
+    You can also look for information at:
+
+    *   RT: CPAN's request tracker (report bugs here)
+
+        <http://rt.cpan.org/NoAuth/Bugs.html?Dist=TidyAndCommit>
+
+    *   AnnoCPAN: Annotated CPAN documentation
+
+        <http://annocpan.org/dist/TidyAndCommit>
+
+    *   CPAN Ratings
+
+        <http://cpanratings.perl.org/d/TidyAndCommit>
+
+    *   Search CPAN
+
+        <http://search.cpan.org/dist/TidyAndCommit/>
+
+COPYRIGHT AND LICENSE
+    Copyright (C) 2011 Shantanu Bhadoria
+
+    "<shantanu (dot comes here) bhadoria at gmail dot com>"
+    <http://www.shantanubhadoria.com>
+
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of either: the GNU General Public License as published
+    by the Free Software Foundation; or the Artistic License.
+
+    See http://dev.perl.org/licenses/ for more information.
+
+Dependencies
+    File::Spec
+

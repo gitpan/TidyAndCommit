@@ -1,0 +1,29 @@
+---
+abstract: "This class can be used as a wrapper around a commit (check example for how to wrap \nthis around a subversion commit message). The module cleans up the target code using perltidy before \nrunning the next step(usually a svn commit statement for my own use case). Perltidy must be \ninstalled before use of this script. This Class will Tidy all files with .pm, .cgi or .pl extension \nwhen passed a file name and it will search for all file in a folder with .pm, .cgi or .pl extension\nwhen passed a foldername pass your own tidyrc config file to the object to get custom tidy goodness."
+author:
+  - 'Shantanu Bhadoria <shantanu at cpan dott org>'
+build_requires:
+  Test::More: 0.47
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.200012, CPAN::Meta::Converter version 2.110930001'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: TidyAndCommit
+no_index:
+  directory:
+    - xt
+    - example
+requires:
+  File::Spec: 0
+  Perl::Tidy: 0
+resources:
+  bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=TidyAndCommit
+  homepage: https://github.com/shantanubhadoria/TidyAndCommit
+  license: http://dev.perl.org/licenses/
+  repository: git://github.com/shantanubhadoria/tidyandcommit.git
+version: 0.01
+x_authority: cpan:SHANTANU
